@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
-export async function POST(req: Request, { params }: { params: { token: string } }) {
-  const token = params?.token
+export async function POST(req: Request, context: { params: Promise<{ token: string }> }) {
+  const { token } = await context.params
 
   if (!token) {
     return NextResponse.json({ message: 'Token inválido.' }, { status: 400 })
