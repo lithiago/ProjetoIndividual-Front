@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1E1E1E;
+  margin: 0;
+}
+
+.dropdown-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.hero {
+  position: relative;
+  height: 100vh; /* ou altura fixa como 540px */
+  overflow: hidden;
+  color: white;
+}
+
+.hero__backdrop {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Gradiente da direita para esquerda + bottom para cima */
+.hero__gradient {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(to right, rgba(0,0,0,0.85) 40%, transparent 70%),
+    linear-gradient(to top, rgba(0,0,0,0.6) 20%, transparent 60%);
+}
+
+.hero__content {
+  position: absolute;
+  bottom: 80px;
+  left: 48px;
+  max-width: 420px;
+}
+
+.navbar {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  transition: background 0.3s;
+  z-index: 10;
+}
+
+.navbar--scrolled {
+  position: fixed;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(8px);
 }
