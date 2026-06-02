@@ -7,7 +7,7 @@ function normalize(m: any): Movie {
     poster: m.img_src ?? null,
     year: m.year ? String(m.year) : '',
     genres: m.genres ?? [],
-    backdrop_url: m.backdrop_url
+    backdrop_src: m.backdrop_url ?? null
   }
 }
 
