@@ -2,14 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-
-interface Movie {
-  id: string
-  title: string
-  poster: string | null
-  year: string
-  genres: string[]
-}
+import { Movie } from '@/types/movies'
 
 interface OnboardingModalProps {
   userId: string
@@ -140,9 +133,9 @@ export function OnboardingModal({ userId }: OnboardingModalProps) {
           overflow: 'hidden',
           background: '#1a1a1a',
         }}>
-          {currentMovie.poster ? (
+          {currentMovie.backdrop_src ? (
             <img
-              src={currentMovie.poster}
+              src={currentMovie.backdrop_src}
               alt={currentMovie.title}
               style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
