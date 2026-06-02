@@ -62,7 +62,7 @@ export function MovieTable({ movies, filterText }: MovieTableProps) {
               {movie.title}
             </p>
             <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '12px', margin: '4px 0 0' }}>
-              {movie.year}{movie.genres && ` · ${movie.genres.join(', ')}`}
+              {movie.year}{movie.genres && ` · ${movie.genres}`}
             </p>
           </div>
         </div>
