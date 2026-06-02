@@ -19,6 +19,7 @@ export async function POST(req: Request) {
       )
     }
 
+    console.log("Response:", data)
     return NextResponse.json({ ok: true })
   } catch (error) {
     console.log(error)
