@@ -45,3 +45,38 @@ export async function register({ name, email, password }: RegisterParams): Promi
   if (!res.ok) return { ok: false, message: data.message }
   return { ok: true, userId: data.userId }  // <- pega do Route Handler
 }
+
+interface ResetPasswordParams {
+  token: string
+  password: string
+}
+
+export async function resetPassword({ token, password }: ResetPasswordParams): Promise<AuthResponse> {
+  const res = await fetch(`/api/auth/reset-password/${token}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ password }),
+  })
+
+  const data = await res.json()
+
+  if (!res.ok) return { ok: false, message: data.message }
+  return { ok: true }
+}
+
+interface ForgotPasswordParams {
+  email: string
+}
+
+export async function forgotPassword({ email }: ForgotPasswordParams): Promise<AuthResponse> {
+  const res = await fetch('/api/auth/forgot-password', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email }),
+  })
+
+  const data = await res.json()
+
+  if (!res.ok) return { ok: false, message: data.message }
+  return { ok: true }
+}

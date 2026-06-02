@@ -146,6 +146,24 @@ export function LoginModal({ onClose, onRegister, onSuccess }: LoginModalProps) 
           {loading ? 'Logando' : 'Login'}
         </button>
 
+        <button
+          onClick={() => {
+            onClose()
+            router.push('/forgot-password')
+          }}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: '#fff',
+            fontWeight: 500,
+            fontSize: '13px',
+            cursor: 'pointer',
+            padding: 0,
+            alignSelf: 'flex-end',
+          }}
+        >
+          Esqueceu a senha?
+        </button>
 
         <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '13px', textAlign: 'center', margin: 0 }}>
           Não tem uma conta?{' '}

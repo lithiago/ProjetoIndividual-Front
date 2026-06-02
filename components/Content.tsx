@@ -77,7 +77,7 @@ export function Content({ isLoggedIn, userId }: ContentProps) {
 
   return (
     <div style={{ padding: '32px 0' }}>
-      <ContentRow title="Top Rated" items={topRated} href='/movies?type=top-rated'/>
+      <ContentRow title="Mais Avaliados" items={topRated} href='/movies?type=top-rated'/>
 
       {isLoggedIn && recommended.length > 0 && (
         <ContentRow title="Recomendados para você" items={recommended.slice(0, 20)} href='/movies?type=recommended' />
@@ -87,7 +87,7 @@ export function Content({ isLoggedIn, userId }: ContentProps) {
         <ContentRow title="Ainda não assistidos" items={nonWatched} href='/movies?type=recommended' />
       )}
 
-      <CategoryRow title="Categories" categories={categories} />
+      <CategoryRow title="Categorias" categories={categories} />
 
       {featuredMovie && (
         loadingFeatured ? (

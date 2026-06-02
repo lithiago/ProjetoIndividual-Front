@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { SearchIcon } from './icons/SearchIcon'
-import { FilterIcon } from './icons/FilterIcon'
 import { LoginButton } from './LoginButton'
 import { UserButton } from './UserButton'
 import { SearchBar } from './SearchBar'
@@ -123,19 +122,6 @@ export function Navbar({ isLoggedIn = false }: NavbarProps) {
           )}
         </div>
 
-        <button style={{
-          width: '40px', height: '40px',
-          borderRadius: '50%',
-          border: 'none',
-          background: 'transparent',
-          color: '#fff',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          cursor: 'pointer',
-        }}>
-          <FilterIcon size={20} color="white" />
-        </button>
 
         {isLoggedIn ? <UserButton /> : <LoginButton />}
       </div>

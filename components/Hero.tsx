@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { FilterIcon } from "./icons/FilterIcon";
-import { SearchIcon } from "./icons/SearchIcon";
 import { Navbar } from "./Navbar";
 import Image from "next/image";
 import TrailerModal from "./TrailerModal";
@@ -17,16 +15,6 @@ interface Movie {
     year: string
     quality: string
     poster: string | null
-}
-
-const movie: Movie = {
-    title: 'Babylon',
-    genres: ['Drama', 'Comedy'],
-    description: 'A tale of outsized ambition...',
-    duration: '1h 54m',
-    year: '2022',
-    quality: '4K UHD',
-    poster: '/spiderman-brandnewday.jpg',
 }
 
 const guestMovie = {
@@ -139,25 +127,9 @@ export default function Hero({ isLoggedIn = false }: HeroProps) {
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="#1E1E1E">
                             <polygon points="5,3 19,12 5,21" />
                         </svg>
-                        Watch Now
+                        Assista o Trailer
                     </button>
 
-
-                    <button style={{
-                        width: '42px', height: '42px',
-                        borderRadius: '8px',
-                        border: 'none',
-                        background: 'rgba(255,255,255,0.15)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        cursor: 'pointer',
-                    }}>
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
-                            stroke="white" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                        </svg>
-                    </button>
                 </div>
             </div>
 
